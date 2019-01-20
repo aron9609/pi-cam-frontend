@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    {{"navbar.title" | translate}}
+  </a>
+
+  <button class="navbar-toggler" type="button"
+          (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse"
+       [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+      <!--<li class="nav-item">-->
+      <!--<a class="nav-link" href="#">Item 1</a>-->
+      <!--</li>-->
+
+      <!--<li class="nav-item">-->
+      <!--<a class="nav-link" href="#">Item 2</a>-->
+      <!--</li>-->
+    </ul>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" (click)="setLang('en')" class="btn btn-secondary">English</button>
+      <button type="button" (click)="setLang('hu')" class="btn btn-secondary">Magyar</button>
+    </div>
+  </div>
+</nav>
