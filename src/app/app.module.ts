@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { NavbarComponent } from './navbar/navbar.component';
+import { DeviceCreatorFormComponent } from './pages/device-creator-form/device-creator-form.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -15,7 +16,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    DeviceCreatorFormComponent
   ],
   imports: [
     BrowserModule,
