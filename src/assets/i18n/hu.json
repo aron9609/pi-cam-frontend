@@ -1,17 +1,35 @@
 {
   "navbar": {
+    "items": {
+      "creation": "Új eszköz"
+    }
   },
   "deviceCreator": {
     "form": {
+      "title": "Új eszköz létrehozása.",
       "labels":{
         "name": "Az eszköz neve",
-        "description": "Az eszköz leírása"
+        "description": "Az eszköz leírása",
+        "ip": "Az eszköz IPv4 címe",
+        "port": "Az eszköz portja",
+        "submit": "Mentés"
       },
       "validations":{
-        "name": "Name of the device",
+        "name": {
+          "required": "A név megadása kötelező.",
+          "minLength": "A név túl rövid."
+        },
         "description": {
           "required": "A leírás megadása kötelező.",
           "minLength": "A leírás túl rövid."
+        },
+        "ip": {
+          "required": "Az IP cím megadása kötelező.",
+          "pattern": "Az IP címnek IPv4 címnek kell lennie."
+        },
+        "port": {
+          "required": "A port megadása kötelező.",
+          "pattern": "A portnak minimum egy számjegyből kell állnia."
         }
       }
     }

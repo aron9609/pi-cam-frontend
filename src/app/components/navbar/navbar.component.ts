@@ -23,7 +23,6 @@ export class NavbarComponent {
   }
 
   setLang(lang: string){
-    console
     this.translate.use(lang);
   }
 

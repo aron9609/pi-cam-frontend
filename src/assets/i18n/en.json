@@ -1,18 +1,36 @@
 {
   "navbar": {
-    "title": "Pi Cam Project"
+    "title": "Pi Cam Project",
+    "items": {
+      "creation": "New device"
+    }
   },
   "deviceCreator": {
     "form": {
+      "title": "Save a new device",
       "labels":{
         "name": "Name of the device",
-        "description": "Description of the device"
+        "description": "Description of the device",
+        "ip": "IPv4 address of the device",
+        "port": "Port of the device",
+        "submit": "Save"
       },
       "validations":{
-        "name": "Name of the device",
+        "name": {
+          "required": "The name is required.",
+          "minLength": "The name is too short."
+        },
         "description": {
           "required": "The description is required.",
           "minLength": "The description is too short."
+        },
+        "ip": {
+          "required": "The IP address is required.",
+          "pattern": "The IP address should be match the IPv4 pattern."
+        },
+        "port": {
+          "required": "The port is required.",
+          "pattern": "The port should contain one or more digits."
         }
       }
     }
