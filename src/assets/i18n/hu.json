@@ -1,5 +1,19 @@
 {
   "navbar": {
-
+  },
+  "deviceCreator": {
+    "form": {
+      "labels":{
+        "name": "Az eszköz neve",
+        "description": "Az eszköz leírása"
+      },
+      "validations":{
+        "name": "Name of the device",
+        "description": {
+          "required": "A leírás megadása kötelező.",
+          "minLength": "A leírás túl rövid."
+        }
+      }
+    }
   }
 }

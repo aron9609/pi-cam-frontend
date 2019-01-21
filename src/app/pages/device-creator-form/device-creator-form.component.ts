@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-device-creator-form',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeviceCreatorFormComponent implements OnInit {
 
-  constructor() { }
+  mainForm: FormGroup = new FormGroup({
+    name: new FormControl('',[Validators.required, Validators.minLength(3)]),
+    description: new FormControl('', [Validators.required, Validators.minLength(3)]),
+  })
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

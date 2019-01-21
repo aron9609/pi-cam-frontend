@@ -8,6 +8,7 @@ import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { NavbarComponent } from './navbar/navbar.component';
 import { DeviceCreatorFormComponent } from './pages/device-creator-form/device-creator-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -20,6 +21,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     DeviceCreatorFormComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

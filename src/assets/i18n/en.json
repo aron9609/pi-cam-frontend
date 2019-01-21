@@ -1,5 +1,20 @@
 {
   "navbar": {
     "title": "Pi Cam Project"
+  },
+  "deviceCreator": {
+    "form": {
+      "labels":{
+        "name": "Name of the device",
+        "description": "Description of the device"
+      },
+      "validations":{
+        "name": "Name of the device",
+        "description": {
+          "required": "The description is required.",
+          "minLength": "The description is too short."
+        }
+      }
+    }
   }
 }
