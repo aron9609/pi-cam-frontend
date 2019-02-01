@@ -4,11 +4,12 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
-import {ReactiveFormsModule} from "@angular/forms";
-import {NavbarComponent} from "./components/navbar/navbar.component";
-import {DeviceCreatorFormComponent} from "./components/pages/device-creator-form/device-creator-form.component";
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {ReactiveFormsModule} from '@angular/forms';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {DeviceCreatorFormComponent} from './components/pages/device-creator-form/device-creator-form.component';
+import {deviceCreatorInterceptorProvider} from './services/devicecreator/device-creator.interceptor';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -33,7 +34,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [
+    deviceCreatorInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
