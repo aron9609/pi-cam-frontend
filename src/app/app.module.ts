@@ -9,7 +9,9 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {DeviceCreatorFormComponent} from './components/pages/device-creator-form/device-creator-form.component';
-import {deviceCreatorInterceptorProvider} from './services/devicecreator/device-creator.interceptor';
+import { MessagesComponent } from './messages/messages.component';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -19,13 +21,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     AppComponent,
     NavbarComponent,
-    DeviceCreatorFormComponent
+    DeviceCreatorFormComponent,
+    MessagesComponent
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -35,7 +40,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     })
   ],
   providers: [
-    deviceCreatorInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

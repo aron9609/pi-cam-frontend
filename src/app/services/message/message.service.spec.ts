@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DeviceCreatorService } from './device-creator.service';
+import { MessageService } from './message.service';
 
-describe('DeviceCreatorService', () => {
+describe('MessageService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DeviceCreatorService = TestBed.get(DeviceCreatorService);
+    const service: MessageService = TestBed.get(MessageService);
     expect(service).toBeTruthy();
   });
 });

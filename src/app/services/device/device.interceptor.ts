@@ -10,19 +10,17 @@ import {
 import {Observable, of} from 'rxjs';
 
 @Injectable()
-export class DeviceCreatorInterceptor implements HttpInterceptor {
+export class DeviceInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(req.url)
     if (req.url.lastIndexOf('createdevice') > -1) {
-      console.log('intercepted')
       return of(new HttpResponse({ status: 200}));
     }
     return next.handle(req);
   }
 }
 
-export let deviceCreatorInterceptorProvider = {
+export let deviceInterceptorProvider = {
   provide: HTTP_INTERCEPTORS,
-  useClass: DeviceCreatorInterceptor,
+  useClass: DeviceInterceptor,
   multi: true
 };

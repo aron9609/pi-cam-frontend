@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
-import {DeviceCreatorService} from '../../../services/devicecreator/device-creator.service';
+import { Component} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DeviceService} from '../../../services/device/device.service';
+import {catchError} from 'rxjs/operators';
+import {BadInputError} from '../../../common/error/bad-input-error';
+import {NotFoundError} from '../../../common/error/not-found-error';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-device-creator-form',
@@ -11,8 +15,9 @@ export class DeviceCreatorFormComponent {
 
   mainForm: FormGroup;
 
-  constructor(private deviceCreatorService: DeviceCreatorService,
-              private formBuilder: FormBuilder) {
+  constructor(private deviceService: DeviceService,
+              private formBuilder: FormBuilder,
+              private toaster: ToastrService ) {
     this.mainForm = formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.minLength(3)]],
@@ -22,7 +27,18 @@ export class DeviceCreatorFormComponent {
   }
 
   onSubmit() {
-    this.deviceCreatorService.postData(this.mainForm.value);
+    this.deviceService.createDevice(this.mainForm.value).subscribe(
+      null,
+       err => {
+         console.log(err)
+        if (err instanceof NotFoundError) {
+          this.toaster.error('NotFoundError');
+        } else if (err instanceof BadInputError) {
+          this.toaster.error('BadInputError');
+        } else {
+          this.toaster.error('Unexpected error');
+        }
+      });
   }
 
 }

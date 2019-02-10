@@ -7,7 +7,7 @@
   },
   "deviceCreator": {
     "form": {
-      "title": "Save a new device",
+      "title": "Create a new device",
       "labels":{
         "name": "Name of the device",
         "description": "Description of the device",
