@@ -1,7 +1,8 @@
 {
   "navbar": {
     "items": {
-      "creation": "Új eszköz"
+      "newDevice": "Új eszköz",
+      "devices": "Eszközök"
     }
   },
   "deviceCreator": {

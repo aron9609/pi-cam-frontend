@@ -1,0 +1,38 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Ip</th>
+    <th scope="col">Port</th>
+    <th scope="col">Operations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let device of pagingResponseInfo.data">
+    <td>{{device.name}}</td>
+    <td>{{device.ip}}</td>
+    <td>{{device.port}}</td>
+    <td>
+      <div class="btn-group">
+        <button type="button" (click)="open(device.id)" class="btn btn-secondary">Open</button>
+        <button type="button" (click)="modify(device.id)" class="btn btn-secondary">Modify</button>
+        <button type="button" (click)="remove(device.id)" class="btn btn-secondary">Delete</button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+  <nav>
+    <ul class="pagination">
+      <li class="page-item">
+        <button [disabled]="pagingInfo.first < pagingInfo.pageSize" (click)="prevPage()" class="page-link"
+                href="#">Previous
+        </button>
+      </li>
+      <li class="page-item">
+        <button [disabled]="pagingResponseInfo.lastIndex > pagingResponseInfo.count-pagingInfo.pageSize"
+                (click)="nextPage()" class="page-link" href="#">Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+</table>

@@ -2,7 +2,8 @@
   "navbar": {
     "title": "Pi Cam Project",
     "items": {
-      "creation": "New device"
+      "newDevice": "New device",
+      "devices": "Devices"
     }
   },
   "deviceCreator": {
