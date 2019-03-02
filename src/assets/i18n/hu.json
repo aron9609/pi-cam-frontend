@@ -1,7 +1,8 @@
 {
   "navbar": {
     "items": {
-      "creation": "Új eszköz"
+      "newDevice": "Új eszköz",
+      "devices": "Eszközök"
     }
   },
   "deviceCreator": {
@@ -32,6 +33,20 @@
           "pattern": "A portnak minimum egy számjegyből kell állnia."
         }
       }
+    }
+  },
+  "deviceFetcher": {
+    "table": {
+      "header": {
+        "name": "Név",
+        "ip": "IP Cím",
+        "port": "Port",
+        "operations": "Műveletek"
+      }
+    },
+    "paginator": {
+      "previous": "Előző",
+      "next": "Következő"
     }
   }
 }

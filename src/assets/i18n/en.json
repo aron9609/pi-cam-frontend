@@ -2,20 +2,21 @@
   "navbar": {
     "title": "Pi Cam Project",
     "items": {
-      "creation": "New device"
+      "newDevice": "New device",
+      "devices": "Devices"
     }
   },
   "deviceCreator": {
     "form": {
       "title": "Create a new device",
-      "labels":{
+      "labels": {
         "name": "Name of the device",
         "description": "Description of the device",
         "ip": "IPv4 address of the device",
         "port": "Port of the device",
         "submit": "Save"
       },
-      "validations":{
+      "validations": {
         "name": {
           "required": "The name is required.",
           "minLength": "The name is too short."
@@ -33,6 +34,20 @@
           "pattern": "The port should contain one or more digits."
         }
       }
+    }
+  },
+  "deviceFetcher": {
+    "table": {
+      "header": {
+        "name": "Name",
+        "ip": "IP Address",
+        "port": "Port",
+        "operations": "Operations"
+      }
+    },
+    "paginator": {
+      "previous": "Previous",
+      "next": "Next"
     }
   }
 }
