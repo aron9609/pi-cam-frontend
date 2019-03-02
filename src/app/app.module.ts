@@ -13,7 +13,7 @@ import { MessagesComponent } from './messages/messages.component';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DeviceFetcherComponent } from './components/pages/device-fetcher/device-fetcher.component';
-import {deviceInterceptorProvider} from "./services/device/device.interceptor";
+import {deviceInterceptorProvider} from './services/device/device.interceptor';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);

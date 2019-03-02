@@ -34,5 +34,19 @@
         }
       }
     }
+  },
+  "deviceFetcher": {
+    "table": {
+      "header": {
+        "name": "Név",
+        "ip": "IP Cím",
+        "port": "Port",
+        "operations": "Műveletek"
+      }
+    },
+    "paginator": {
+      "previous": "Előző",
+      "next": "Következő"
+    }
   }
 }
